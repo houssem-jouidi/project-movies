@@ -1,0 +1,16 @@
+<div class="container  d-flex  align-items-center" style="min-height: calc(100vh - 133px)"> 
+   
+     <div class="row py-5" *ngIf="container">
+         <div class="col-md-6 mb-5 text-center">
+             <img style="height:500px" [src]="prefex+container.poster_path" alt="" class="img-fluid text-center">
+         </div>
+         <div class="col-md-6 d-flex justify-content-center align-items-center">
+             <div class="position-relative">
+                <h1 class="my-5">{{container.original_title}}</h1>
+                <p>{{container.overview}}</p>
+                <p class="vote">{{container.vote_average}}</p>
+             </div>
+         </div>
+     </div>
+
+</div>

@@ -1,0 +1,12 @@
+$bdyBG:#13151f;
+:host ::ng-deep  .pagination {
+    justify-content: center !important;
+    .page-item.active {
+        .page-link {
+            background-color:$bdyBG;
+            border-color: black;
+            
+        }
+    }
+    .page-link{padding: .5rem 0.50rem !important;}
+}

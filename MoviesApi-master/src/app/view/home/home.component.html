@@ -1,0 +1,26 @@
+<div class="container" style="min-height: calc(100vh - 133px);padding-top:20px" >
+    <input  type="text" [(ngModel)]="term" class="form-control mb-5" placeholder="serach.....">
+  
+    <div class="row">
+
+       <div class="col-md-6 mb-5" *ngFor="let movie of moviesContainer|search:term;let i = index">
+            <div class="row">
+                <div class="col-md-6">
+                <img [src]="prefex+movie.poster_path" alt="" class="mb-2  img-fluid">
+                </div>
+                <div class="col-md-6">
+                   <div class="content position-relative">
+                        <h5 class="mt-5 mb-3">{{movie.title}}</h5>
+                    <p>{{movie.overview | slice}}</p>
+                    <p class="vote">{{movie.vote_average}}</p>
+                    <button [routerLink]="['/moviedetails',movie.id,page]">View Details</button>
+                   </div>
+                </div>
+            </div>
+       </div>
+    </div>
+ 
+    <ngb-pagination  class="m-auto" [collectionSize]="300" [(page)]="page" [maxSize]="5" [boundaryLinks]="true" (pageChange)="pager($event)" ></ngb-pagination>
+
+
+</div>
